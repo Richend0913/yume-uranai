@@ -7,7 +7,7 @@ from datetime import datetime
 
 SITE_DIR = os.path.dirname(os.path.abspath(__file__))
 DREAMS_DIR = os.path.join(SITE_DIR, "dreams")
-ADSENSE_PUB = "ca-pub-6327505164684489"
+ADSENSE_PUB = ""  # AdSense removed: not approved (2026-11-02)
 SITE_URL = "https://richend0913.github.io/yume-uranai"
 CURRENT_DATE = datetime.now().strftime("%Y-%m-%d")
 
@@ -1100,7 +1100,6 @@ def generate_index():
 <script type="application/ld+json">
 {jsonld_index}
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1138,16 +1137,6 @@ def generate_index():
     </div>
 </div>
 
-<!-- Ad Space -->
-<div class="ad-space">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="{ADSENSE_PUB}"
-         data-ad-slot="1234567890"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>
 
 <div class="toc">
     <h3>📖 全ての夢のシンボル一覧</h3>
@@ -1159,15 +1148,6 @@ def generate_index():
 {sections_html}
 
 <!-- Bottom Ad Space -->
-<div class="ad-space">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="{ADSENSE_PUB}"
-         data-ad-slot="0987654321"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>
 
 <div style="background:linear-gradient(135deg,#1a1025,#2d1b4e);border:1px solid rgba(212,175,55,.2);border-radius:12px;padding:20px;text-align:center;margin:24px 0;">
   <div style="font-size:.85rem;color:#d4af37;font-weight:600;margin-bottom:8px;">もっと詳しく知りたい方へ</div>
@@ -1308,7 +1288,6 @@ def generate_dream_page(dream):
 <script type="application/ld+json">
 {jsonld_article}
 </script>
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={ADSENSE_PUB}" crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -1341,16 +1320,6 @@ def generate_dream_page(dream):
         <p class="detail-category">{d['category']} / 吉凶: <span class="fortune-badge {fortune_class}">{d['fortune']}</span></p>
     </div>
 
-    <!-- Ad Space -->
-    <div class="ad-space">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="{ADSENSE_PUB}"
-             data-ad-slot="1111111111"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-    </div>
 
     <section class="dream-section">
         <h2>🔮 {d['name']}の夢の基本的な意味</h2>
@@ -1365,15 +1334,6 @@ def generate_dream_page(dream):
     </section>
 
     <!-- Mid Ad Space -->
-    <div class="ad-space">
-        <ins class="adsbygoogle"
-             style="display:block"
-             data-ad-client="{ADSENSE_PUB}"
-             data-ad-slot="2222222222"
-             data-ad-format="auto"
-             data-full-width-responsive="true"></ins>
-        <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-    </div>
 
     <section class="dream-section">
         <h2>🧠 心理学的な解釈</h2>
@@ -1402,15 +1362,6 @@ def generate_dream_page(dream):
 </article>
 
 <!-- Bottom Ad Space -->
-<div class="ad-space">
-    <ins class="adsbygoogle"
-         style="display:block"
-         data-ad-client="{ADSENSE_PUB}"
-         data-ad-slot="3333333333"
-         data-ad-format="auto"
-         data-full-width-responsive="true"></ins>
-    <script>(adsbygoogle = window.adsbygoogle || []).push({{}});</script>
-</div>
 
 <section class="category-section">
     <h2><span class="cat-emoji">{CATEGORIES[d['category']]['emoji']}</span>{d['category']}の他の夢</h2>
